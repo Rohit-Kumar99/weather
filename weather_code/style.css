@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700,800&display=swap");
+
+/* .........Root Variable........... */
+:root {
+  --color-primary: #7380ec;
+  --color-danger: #ff7782;
+  --color-success: #41f1b6;
+  --color-warning: #ffbb55;
+  --color-white: #fff;
+  --color-info-dark: #7d8da1;
+  --color-info-light: #dce1eb;
+  --color-dark: #363949;
+  --color-light: rgba(132, 139, 200, 0.18);
+  --color-primary-variant: #111e88;
+  --color-dark-variant: #677483;
+  --color-background: #f6f6f9;
+
+  --card-border-radius: 2rem;
+  --border-radius-1: 0.4rem;
+  --border-radius-2: 0.8rem;
+  --border-radius-3: 1.2rem;
+
+  --card-padding: 1.8rem;
+  --padding-1: 1.2rem;
+
+  --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  appearance: none;
+  border: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  width: 100vw;
+   min-height: 100vh;
+  font-family: poppins, sans-serif;
+  font-size: 0.88rem;
+  overflow-x: hidden;
+  color: var(--color-dark);
+  /* background-color: var(--color-background); */
+  background-image: url("../assets/weather-background.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  padding: 1rem;
+  height: auto;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 1.8rem;
+  color: var(--color-white);
+}
+
+/* Weather Card */
+.weather-card {
+  background: transparent;
+  outline: 2px solid black;
+  border-radius: var(--card-border-radius);
+  width: 40rem;
+  height: 30rem;
+  box-shadow: var(--box-shadow);
+}
+
+/* Search Box */
+.search {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+}
+
+.search input {
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--color-info-light);
+  border-radius: var(--border-radius-3);
+  background: var(--color-background);
+  color: var(--color-dark);
+  font-family: poppins, sans-serif;
+  font-size: 0.8rem;
+  transition: border 300ms ease;
+  flex: 1;
+}
+
+.search button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-background);
+  border-radius: 50%;
+  padding: 0.4rem;
+  cursor: pointer;
+  transition: background 300ms ease;
+}
+
+.search button:hover {
+  background: var(--color-info-light);
+}
+
+.search button span {
+  font-size: 1.3rem;
+  color: var(--color-dark);
+  display: flex;
+}
+
+/* Center  */
+.card-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather-logo img {
+  width: 30%;
+  height: 20%;
+  object-fit: contain;
+}
+
+/* ======= RESPONSIVENESS ======= */
+
+/* Tablet - 768px */
+@media (max-width: 768px) {
+  .weather-card {
+    width: 28rem;
+    height: 26rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .weather-logo img {
+    width: 40%;
+  }
+
+  .search {
+    padding: 0.8rem 1.2rem;
+  }
+
+  .search input {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.8rem;
+  }
+}
+
+/* Mobile Large - 480px */
+@media (max-width: 480px) {
+  .weather-card {
+    width: 90vw;        
+    height: auto;
+    min-height: 22rem;
+    border-radius: 1.2rem;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  .search {
+    padding: 0.8rem 1rem;
+    gap: 0.4rem;
+  }
+
+  .search input {
+    font-size: 0.72rem;
+    padding: 0.45rem 0.7rem;
+  }
+
+  .search button {
+    padding: 0.35rem;
+  }
+
+  .search button span {
+    font-size: 1.1rem;
+  }
+
+  .weather-logo img {
+    width: 50%;
+  }
+
+  .card-center {
+    padding: 0.5rem 0;
+  }
+}
+
+/* Mobile Small - 360px */
+@media (max-width: 360px) {
+  .weather-card {
+    width: 95vw;
+    border-radius: 1rem;
+  }
+
+  h1 {
+    font-size: 1.1rem;
+  }
+
+  .weather-logo img {
+    width: 55%;
+  }
+
+  .search input {
+    font-size: 0.68rem;
+  }
+}
